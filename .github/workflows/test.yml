@@ -36,7 +36,7 @@ jobs:
         flake8
     - name: Send mail
 #       if: always()
-      if: ${{job.status}} == "failure"
+      if: ${{ failure() }}
       uses: dawidd6/action-send-mail@v2
       with:
         
