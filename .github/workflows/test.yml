@@ -35,7 +35,8 @@ jobs:
       run: |
         flake8
     - name: Send mail
-      if: always()
+#       if: always()
+      if: '${{job.status}} == "failure"'
       uses: dawidd6/action-send-mail@v2
       with:
         
