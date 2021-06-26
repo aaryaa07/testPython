@@ -38,6 +38,7 @@ jobs:
       if: always()
       uses: dawidd6/action-send-mail@v2
       with:
+        
         # mail server settings
         server_address: smtp.gmail.com
         server_port: 465
@@ -49,6 +50,6 @@ jobs:
         # email body as text
         body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
         # comma-separated string, send email to
-        to: as.aryamansingh@gmail.com, kaustubh.sharma1@learner.manipal.edu, mayur072000@gmail.com
+        to: as.aryamansingh@gmail.com, ${{secrets.EMAIL_USERNAME}}
         # from email name
         from: AryamanSingh
